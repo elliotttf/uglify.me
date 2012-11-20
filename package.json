@@ -4,7 +4,8 @@
   "private": true,
   "dependencies": {
     "union": "0.3.0",
-    "flatiron": "0.3.0"
+    "flatiron": "0.3.0",
+    "uglify-js": "~1.3.4"
   },
   "devDependencies": {
     "api-easy": "0.3.2",

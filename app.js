@@ -15,9 +15,16 @@ app.router.get('/', function () {
 
 app.router.post('/uglify', function() {
   var code = this.req.chunks.toString();
-  var uglified = app.uglify(code);
-  this.res.end(uglified);
-  app.log.info('Uglified ' + uglified.length + ' bytes');
+  try {
+    var uglified = app.uglify(code);
+    this.res.end(uglified);
+    app.log.info('Uglified ' + code.length + ' bytes to ' + uglified.length + ' bytes.');
+  }
+  catch (e) {
+    this.res.writeHead(500);
+    this.res.end();
+    app.log.error(e.message);
+  }
 });
 
 app.start(3000);

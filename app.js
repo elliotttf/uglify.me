@@ -27,4 +27,4 @@ app.router.post('/uglify', function() {
   }
 });
 
-app.start(3000);
+app.start(app.config.get('port') || 3000);

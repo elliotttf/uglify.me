@@ -8,13 +8,16 @@ app.use(flatiron.plugins.http);
 app.use(require('./lib/uglify'));
 
 app.router.get('/', function () {
-  this.res.json({ 'Post your JS file to /uglify to receive the uglified version!' })
+  this.res.json({
+    'res': 'Post your JS file to /uglify to receive the uglified version.'
+  });
 });
 
 app.router.post('/uglify', function() {
   var code = this.req.chunks.toString();
   var uglified = app.uglify(code);
   this.res.end(uglified);
+  app.log.info('Uglified ' + uglified.length + ' bytes');
 });
 
 app.start(3000);

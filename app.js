@@ -24,10 +24,15 @@ app.router.get('/', function() {
 
 app.router.post('/uglify', function() {
   var options = {};
-  var code = this.req.chunks.toString();
+  var code = '';
   if (typeof this.req.body !== 'undefined') {
     options = this.req.body.options;
     code = this.req.body.data;
+  }
+  else {
+    this.req.chunks.forEach(function(chunk) {
+      code += chunk;
+    });
   }
   try {
     var uglified = app.uglify(code, options);

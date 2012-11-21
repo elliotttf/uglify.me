@@ -23,9 +23,14 @@ app.router.get('/', function() {
 });
 
 app.router.post('/uglify', function() {
+  var options = {};
   var code = this.req.chunks.toString();
+  if (typeof this.req.body !== 'undefined') {
+    options = this.req.body.options;
+    code = this.req.body.data;
+  }
   try {
-    var uglified = app.uglify(code);
+    var uglified = app.uglify(code, options);
     this.res.end(uglified);
     app.log.info('Uglified ' + code.length + ' bytes to ' + uglified.length + ' bytes.');
   }

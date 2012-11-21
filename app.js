@@ -1,15 +1,24 @@
 var flatiron = require('flatiron'),
     path = require('path'),
+    fs = require('fs'),
     app = flatiron.app;
 
 app.config.file({ file: path.join(__dirname, 'config', 'config.json') });
 
 app.use(flatiron.plugins.http);
+app.use(flatiron.plugins.static, {
+  root: path.join(__dirname, 'static'),
+  dir: path.join(__dirname, 'static')
+});
 app.use(require('./lib/uglify'));
 
-app.router.get('/', function () {
-  this.res.json({
-    'res': 'Post your JS file to /uglify to receive the uglified version.'
+// WAT? Need to figure out how to route this correctly to the static file.
+app.router.get('/', function() {
+  var self = this;
+  fs.readFile(path.join(__dirname, 'static', 'index.html'), 'utf8', function(err, data) {
+    if (!err) {
+      self.res.end(data);
+    }
   });
 });
 

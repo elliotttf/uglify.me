@@ -36,4 +36,8 @@ app.router.post('/uglify', function() {
   }
 });
 
-app.start(app.config.get('port') || 3000);
+var port = app.config.get('port') || 3000;
+app.start(port);
+
+app.log.default.transports[0].timestamp = true;
+app.log.info('Listening on ' + port);

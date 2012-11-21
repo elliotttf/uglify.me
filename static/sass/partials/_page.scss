@@ -46,14 +46,18 @@ body {
 }
 
 header {
-  line-height: $line-height * 3;
   font-size: $font-size * 3;
+  margin-bottom: 1em;
+
+  .oneline {
+    font-size: $font-size * .35;
+  }
 }
 
 #main {
   .section {
     font-size: $font-size * 1.5;
-    margin-bottom: 2em;
+    margin-bottom: .75em;
   }
 }
 
@@ -69,4 +73,8 @@ a {
   &:hover {
     color: #38240C;
   }
+}
+
+::selection {
+  background-color: #6B4C13;
 }

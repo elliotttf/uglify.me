@@ -338,27 +338,36 @@ body {
 
 /* line 48, ../sass/partials/_page.scss */
 header {
-  line-height: 4.2;
   font-size: 3em;
+  margin-bottom: 1em;
+}
+/* line 52, ../sass/partials/_page.scss */
+header .oneline {
+  font-size: 0.35em;
 }
 
-/* line 54, ../sass/partials/_page.scss */
+/* line 58, ../sass/partials/_page.scss */
 #main .section {
   font-size: 1.5em;
-  margin-bottom: 2em;
+  margin-bottom: .75em;
 }
 
-/* line 62, ../sass/partials/_page.scss */
+/* line 66, ../sass/partials/_page.scss */
 a {
   color: #B5520B;
 }
-/* line 65, ../sass/partials/_page.scss */
+/* line 69, ../sass/partials/_page.scss */
 a:visited {
   color: #B5520B;
 }
-/* line 69, ../sass/partials/_page.scss */
+/* line 73, ../sass/partials/_page.scss */
 a:hover {
   color: #38240C;
+}
+
+/* line 78, ../sass/partials/_page.scss */
+::selection {
+  background-color: #6B4C13;
 }
 
 /* line 7, ../../../../../var/lib/gems/1.8/gems/compass-h5bp-0.0.5/stylesheets/h5bp/_helpers.scss */

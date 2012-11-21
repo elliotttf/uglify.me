@@ -1,6 +1,6 @@
 {
-  "description": "Web service for uglifying JavaScript.",
-  "version": "0.0.0",
+  "description": "A simple web service for uglifying JavaScript.",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "union": "0.3.0",
@@ -18,5 +18,6 @@
   },
   "name": "uglify.me",
   "author": "Elliott Foster",
-  "homepage": "http://uglify.me"
+  "homepage": "http://uglify.me",
+  "license": "MIT"
 }

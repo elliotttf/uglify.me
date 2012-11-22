@@ -19,5 +19,13 @@
   "name": "uglify.me",
   "author": "Elliott Foster",
   "homepage": "http://uglify.me",
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": "0.8.x"
+  },
+  "subdomain": "uglify.me.elliotttf",
+  "domains": {
+    "uglify.me",
+    "www.uglify.me"
+  }
 }

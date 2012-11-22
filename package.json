@@ -24,8 +24,8 @@
     "node": "0.8.x"
   },
   "subdomain": "uglify.me.elliotttf",
-  "domains": {
+  "domains": [ 
     "uglify.me",
     "www.uglify.me"
-  }
+  ]
 }

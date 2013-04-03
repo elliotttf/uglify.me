@@ -1,7 +1,8 @@
-var flatiron = require('flatiron'),
-    path = require('path'),
-    fs = require('fs'),
-    app = flatiron.app;
+var flatiron = require('flatiron');
+var path = require('path');
+var fs = require('fs');
+var app = flatiron.app;
+var index = '';
 
 app.config.file({ file: path.join(__dirname, 'config', 'config.json') });
 
@@ -14,12 +15,7 @@ app.use(require('./lib/uglify'));
 
 // WAT? Need to figure out how to route this correctly to the static file.
 app.router.get('/', function() {
-  var self = this;
-  fs.readFile(path.join(__dirname, 'static', 'index.html'), 'utf8', function(err, data) {
-    if (!err) {
-      self.res.end(data);
-    }
-  });
+  this.res.end(index);
 });
 
 app.router.post('/uglify', function() {
@@ -46,8 +42,17 @@ app.router.post('/uglify', function() {
   }
 });
 
-var port = app.config.get('port') || 3000;
-app.start(port);
+fs.readFile(path.join(__dirname, 'static', 'index.html'), 'utf8', function(err, data) {
+  if (err) {
+    app.log.error('Error reading index file.');
+    return;
+  }
 
-app.log.default.transports[0].timestamp = true;
-app.log.info('Listening on ' + port);
+  index = data;
+  var port = app.config.get('port') || 3000;
+  app.start(port);
+
+  app.log.default.transports[0].timestamp = true;
+  app.log.info('Listening on ' + port);
+});
+

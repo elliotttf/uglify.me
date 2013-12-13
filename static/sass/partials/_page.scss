@@ -39,6 +39,9 @@ $grid-padding   : $gutter-width;  // grid-padding equal to gutters
 body {
   background-color: #593001;
   color: #C29325;
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
 
 #container {

@@ -1,0 +1,7 @@
+# Pull gems from RubyGems
+source "https://rubygems.org"
+
+gem "html5-boilerplate"
+gem "compass-h5bp"
+gem "susy"
+gem "respond-to"

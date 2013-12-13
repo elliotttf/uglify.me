@@ -3,10 +3,10 @@
   "version": "0.1.2",
   "private": true,
   "dependencies": {
-    "uglify-js": "~2.2.5",
     "st": "~0.1.0",
     "union": "~0.3.8",
-    "flatiron": "~0.3.11"
+    "flatiron": "~0.3.11",
+    "uglify-js": "~2.4.7"
   },
   "devDependencies": {
     "vows": "~0.7.0",

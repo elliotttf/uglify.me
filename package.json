@@ -1,16 +1,16 @@
 {
   "description": "A simple web service for uglifying JavaScript.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "dependencies": {
-    "union": "0.3.0",
-    "flatiron": "0.3.0",
     "uglify-js": "~2.2.5",
-    "st": "~0.1.0"
+    "st": "~0.1.0",
+    "union": "~0.3.8",
+    "flatiron": "~0.3.11"
   },
   "devDependencies": {
-    "api-easy": "0.3.2",
-    "vows": "0.6.1"
+    "vows": "~0.7.0",
+    "api-easy": "~0.3.8"
   },
   "scripts": {
     "test": "vows --spec",
@@ -21,7 +21,7 @@
   "homepage": "http://uglify.me",
   "license": "MIT",
   "engines": {
-    "node": "0.8.x"
+    "node": "0.10.x"
   },
   "subdomain": "uglify.me.elliotttf",
   "domains": [

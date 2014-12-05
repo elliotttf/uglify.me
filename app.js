@@ -49,7 +49,7 @@ fs.readFile(path.join(__dirname, 'static', 'index.html'), 'utf8', function(err, 
   }
 
   index = data;
-  var port = app.config.get('port') || 3000;
+  var port = app.config.get('port') || 5000;
   app.start(port);
 
   app.log.default.transports[0].timestamp = true;
